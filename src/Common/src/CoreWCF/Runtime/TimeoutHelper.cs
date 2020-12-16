@@ -41,6 +41,7 @@ namespace CoreWCF.Runtime
                 $"timeout must be non-negative or {Timeout.InfiniteTimeSpan}");
 
             _cancellationTokenInitialized = false;
+            _cancellationToken = CancellationToken.None;
             _originalTimeout = timeout;
             _deadline = DateTime.MaxValue;
             _deadlineSet = (timeout == TimeSpan.MaxValue || timeout == Timeout.InfiniteTimeSpan);
